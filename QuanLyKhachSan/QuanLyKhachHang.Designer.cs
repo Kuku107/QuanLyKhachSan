@@ -31,11 +31,11 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             bt_Tim = new Button();
-            tb_CCCDTim = new TextBox();
             label1 = new Label();
-            label12 = new Label();
             tb_HoVaTenTim = new TextBox();
             groupBox3 = new GroupBox();
+            tb_MaKhach = new TextBox();
+            label2 = new Label();
             dtp_NgaySinh = new RJControls.RJDatePicker();
             cb_GioiTinh = new ComboBox();
             label10 = new Label();
@@ -67,9 +67,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(bt_Tim);
-            groupBox1.Controls.Add(tb_CCCDTim);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(tb_HoVaTenTim);
             groupBox1.Font = new Font("Segoe UI", 12F);
             groupBox1.ForeColor = Color.Green;
@@ -84,21 +82,13 @@
             // 
             // bt_Tim
             // 
-            bt_Tim.Location = new Point(371, 21);
+            bt_Tim.Location = new Point(217, 21);
             bt_Tim.Name = "bt_Tim";
-            bt_Tim.Size = new Size(66, 90);
+            bt_Tim.Size = new Size(179, 90);
             bt_Tim.TabIndex = 39;
-            bt_Tim.Text = "Tìm";
+            bt_Tim.Text = "Tìm kiếm";
             bt_Tim.UseVisualStyleBackColor = true;
-            // 
-            // tb_CCCDTim
-            // 
-            tb_CCCDTim.Font = new Font("Segoe UI", 10F);
-            tb_CCCDTim.Location = new Point(191, 60);
-            tb_CCCDTim.Margin = new Padding(4, 5, 4, 5);
-            tb_CCCDTim.Name = "tb_CCCDTim";
-            tb_CCCDTim.Size = new Size(173, 30);
-            tb_CCCDTim.TabIndex = 38;
+            bt_Tim.Click += bt_Tim_Click;
             // 
             // label1
             // 
@@ -111,28 +101,19 @@
             label1.TabIndex = 38;
             label1.Text = "Họ và tên: ";
             // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 10F);
-            label12.Location = new Point(191, 32);
-            label12.Margin = new Padding(4, 0, 4, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(83, 23);
-            label12.TabIndex = 37;
-            label12.Text = "Số CCCD:";
-            // 
             // tb_HoVaTenTim
             // 
             tb_HoVaTenTim.Font = new Font("Segoe UI", 10F);
             tb_HoVaTenTim.Location = new Point(10, 60);
             tb_HoVaTenTim.Margin = new Padding(4, 5, 4, 5);
             tb_HoVaTenTim.Name = "tb_HoVaTenTim";
-            tb_HoVaTenTim.Size = new Size(173, 30);
+            tb_HoVaTenTim.Size = new Size(171, 30);
             tb_HoVaTenTim.TabIndex = 37;
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(tb_MaKhach);
+            groupBox3.Controls.Add(label2);
             groupBox3.Controls.Add(dtp_NgaySinh);
             groupBox3.Controls.Add(cb_GioiTinh);
             groupBox3.Controls.Add(label10);
@@ -160,16 +141,35 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Thông tin khách hàng";
             // 
+            // tb_MaKhach
+            // 
+            tb_MaKhach.Font = new Font("Segoe UI", 10F);
+            tb_MaKhach.Location = new Point(160, 38);
+            tb_MaKhach.Name = "tb_MaKhach";
+            tb_MaKhach.ReadOnly = true;
+            tb_MaKhach.Size = new Size(151, 30);
+            tb_MaKhach.TabIndex = 39;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.Location = new Point(63, 38);
+            label2.Name = "label2";
+            label2.Size = new Size(88, 23);
+            label2.TabIndex = 38;
+            label2.Text = "Mã khách:";
+            // 
             // dtp_NgaySinh
             // 
             dtp_NgaySinh.BorderColor = Color.PaleVioletRed;
             dtp_NgaySinh.BorderSize = 0;
             dtp_NgaySinh.Font = new Font("Segoe UI", 10F);
             dtp_NgaySinh.Format = DateTimePickerFormat.Short;
-            dtp_NgaySinh.Location = new Point(217, 110);
+            dtp_NgaySinh.Location = new Point(214, 110);
             dtp_NgaySinh.MinimumSize = new Size(0, 35);
             dtp_NgaySinh.Name = "dtp_NgaySinh";
-            dtp_NgaySinh.Size = new Size(179, 35);
+            dtp_NgaySinh.Size = new Size(182, 35);
             dtp_NgaySinh.SkinColor = Color.SeaGreen;
             dtp_NgaySinh.TabIndex = 37;
             dtp_NgaySinh.TextColor = Color.White;
@@ -179,17 +179,18 @@
             cb_GioiTinh.FlatStyle = FlatStyle.System;
             cb_GioiTinh.Font = new Font("Segoe UI", 10F);
             cb_GioiTinh.FormattingEnabled = true;
-            cb_GioiTinh.Location = new Point(8, 336);
+            cb_GioiTinh.Items.AddRange(new object[] { "Nam", "Nữ" });
+            cb_GioiTinh.Location = new Point(214, 175);
             cb_GioiTinh.Margin = new Padding(4, 5, 4, 5);
             cb_GioiTinh.Name = "cb_GioiTinh";
-            cb_GioiTinh.Size = new Size(173, 31);
+            cb_GioiTinh.Size = new Size(182, 31);
             cb_GioiTinh.TabIndex = 36;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10F);
-            label10.Location = new Point(8, 308);
+            label10.Location = new Point(214, 150);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
             label10.Size = new Size(79, 23);
@@ -201,6 +202,7 @@
             cb_LoaiKhachHang.FlatStyle = FlatStyle.System;
             cb_LoaiKhachHang.Font = new Font("Segoe UI", 10F);
             cb_LoaiKhachHang.FormattingEnabled = true;
+            cb_LoaiKhachHang.Items.AddRange(new object[] { "Khách địa phương", "Khách vãng lai", "Khách quốc tế" });
             cb_LoaiKhachHang.Location = new Point(8, 253);
             cb_LoaiKhachHang.Margin = new Padding(4, 5, 4, 5);
             cb_LoaiKhachHang.Name = "cb_LoaiKhachHang";
@@ -223,6 +225,7 @@
             cb_QuocTich.FlatStyle = FlatStyle.System;
             cb_QuocTich.Font = new Font("Segoe UI", 10F);
             cb_QuocTich.FormattingEnabled = true;
+            cb_QuocTich.Items.AddRange(new object[] { "Anh", "Ai Cập", "Banana", "Việt Nam", "Trôn VN" });
             cb_QuocTich.Location = new Point(217, 336);
             cb_QuocTich.Margin = new Padding(4, 5, 4, 5);
             cb_QuocTich.Name = "cb_QuocTich";
@@ -253,7 +256,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10F);
-            label7.Location = new Point(211, 225);
+            label7.Location = new Point(214, 225);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(66, 23);
@@ -276,24 +279,24 @@
             label6.Location = new Point(10, 150);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(83, 23);
+            label6.Size = new Size(59, 23);
             label6.TabIndex = 27;
-            label6.Text = "Số CCCD:";
+            label6.Text = "CCCD:";
             // 
             // tb_SoDienThoai
             // 
             tb_SoDienThoai.Font = new Font("Segoe UI", 10F);
-            tb_SoDienThoai.Location = new Point(214, 175);
+            tb_SoDienThoai.Location = new Point(8, 336);
             tb_SoDienThoai.Margin = new Padding(4, 5, 4, 5);
             tb_SoDienThoai.Name = "tb_SoDienThoai";
-            tb_SoDienThoai.Size = new Size(182, 30);
+            tb_SoDienThoai.Size = new Size(173, 30);
             tb_SoDienThoai.TabIndex = 26;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10F);
-            label5.Location = new Point(214, 147);
+            label5.Location = new Point(10, 308);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(115, 23);
@@ -324,12 +327,12 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 10F);
-            label11.Location = new Point(210, 84);
+            label11.Location = new Point(214, 84);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
-            label11.Size = new Size(86, 23);
+            label11.Size = new Size(90, 23);
             label11.TabIndex = 21;
-            label11.Text = "Ngày sinh";
+            label11.Text = "Ngày sinh:";
             // 
             // groupBox4
             // 
@@ -389,16 +392,18 @@
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = Color.Green;
             dataGridViewCellStyle1.SelectionBackColor = Color.SeaGreen;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dgv_DanhSachKhachHang.DefaultCellStyle = dataGridViewCellStyle1;
             dgv_DanhSachKhachHang.Location = new Point(7, 28);
+            dgv_DanhSachKhachHang.MultiSelect = false;
             dgv_DanhSachKhachHang.Name = "dgv_DanhSachKhachHang";
             dgv_DanhSachKhachHang.ReadOnly = true;
             dgv_DanhSachKhachHang.RowHeadersVisible = false;
             dgv_DanhSachKhachHang.RowHeadersWidth = 51;
+            dgv_DanhSachKhachHang.RowTemplate.Height = 33;
             dgv_DanhSachKhachHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_DanhSachKhachHang.Size = new Size(790, 689);
             dgv_DanhSachKhachHang.TabIndex = 0;
@@ -416,6 +421,8 @@
             Name = "QuanLyKhachHang";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QuanLyKhachHang";
+            FormClosing += QuanLyKhachHang_FormClosing;
+            Load += QuanLyKhachHang_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -451,10 +458,10 @@
         private GroupBox groupBox2;
         private DataGridView dgv_DanhSachKhachHang;
         private Button bt_Tim;
-        private TextBox tb_CCCDTim;
         private Label label1;
-        private Label label12;
         private TextBox tb_HoVaTenTim;
         private RJControls.RJDatePicker dtp_NgaySinh;
+        private TextBox tb_MaKhach;
+        private Label label2;
     }
 }

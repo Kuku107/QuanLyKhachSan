@@ -31,6 +31,7 @@
             label2 = new Label();
             label1 = new Label();
             groupBox1 = new GroupBox();
+            dtp_NgaySinh = new RJControls.RJDatePicker();
             tb_SoDienThoai = new TextBox();
             label5 = new Label();
             cb_GioiTinh = new ComboBox();
@@ -48,7 +49,6 @@
             label3 = new Label();
             groupBox4 = new GroupBox();
             bt_ThemKhachHang = new Button();
-            dtp_NgaySinh = new RJControls.RJDatePicker();
             groupBox1.SuspendLayout();
             groupBox4.SuspendLayout();
             SuspendLayout();
@@ -103,13 +103,27 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin khách hàng";
             // 
+            // dtp_NgaySinh
+            // 
+            dtp_NgaySinh.BorderColor = Color.PaleVioletRed;
+            dtp_NgaySinh.BorderSize = 0;
+            dtp_NgaySinh.Font = new Font("Segoe UI", 10F);
+            dtp_NgaySinh.Format = DateTimePickerFormat.Short;
+            dtp_NgaySinh.Location = new Point(204, 44);
+            dtp_NgaySinh.MinimumSize = new Size(0, 35);
+            dtp_NgaySinh.Name = "dtp_NgaySinh";
+            dtp_NgaySinh.Size = new Size(166, 35);
+            dtp_NgaySinh.SkinColor = Color.SeaGreen;
+            dtp_NgaySinh.TabIndex = 38;
+            dtp_NgaySinh.TextColor = Color.White;
+            // 
             // tb_SoDienThoai
             // 
             tb_SoDienThoai.Font = new Font("Segoe UI", 10F);
             tb_SoDienThoai.Location = new Point(10, 229);
             tb_SoDienThoai.Margin = new Padding(4, 5, 4, 5);
             tb_SoDienThoai.Name = "tb_SoDienThoai";
-            tb_SoDienThoai.Size = new Size(169, 30);
+            tb_SoDienThoai.Size = new Size(170, 30);
             tb_SoDienThoai.TabIndex = 36;
             // 
             // label5
@@ -128,10 +142,11 @@
             cb_GioiTinh.FlatStyle = FlatStyle.System;
             cb_GioiTinh.Font = new Font("Segoe UI", 10F);
             cb_GioiTinh.FormattingEnabled = true;
-            cb_GioiTinh.Location = new Point(208, 105);
+            cb_GioiTinh.Items.AddRange(new object[] { "Nam", "Nữ" });
+            cb_GioiTinh.Location = new Point(204, 105);
             cb_GioiTinh.Margin = new Padding(4, 5, 4, 5);
             cb_GioiTinh.Name = "cb_GioiTinh";
-            cb_GioiTinh.Size = new Size(162, 31);
+            cb_GioiTinh.Size = new Size(166, 31);
             cb_GioiTinh.TabIndex = 34;
             // 
             // label10
@@ -150,6 +165,7 @@
             cb_LoaiKhachHang.FlatStyle = FlatStyle.System;
             cb_LoaiKhachHang.Font = new Font("Segoe UI", 10F);
             cb_LoaiKhachHang.FormattingEnabled = true;
+            cb_LoaiKhachHang.Items.AddRange(new object[] { "Khách địa phương", "Khách vãng lai", "Khách quốc tế" });
             cb_LoaiKhachHang.Location = new Point(18, 166);
             cb_LoaiKhachHang.Margin = new Padding(4, 5, 4, 5);
             cb_LoaiKhachHang.Name = "cb_LoaiKhachHang";
@@ -172,6 +188,7 @@
             cb_QuocTich.FlatStyle = FlatStyle.System;
             cb_QuocTich.Font = new Font("Segoe UI", 10F);
             cb_QuocTich.FormattingEnabled = true;
+            cb_QuocTich.Items.AddRange(new object[] { "Anh", "Ai Cập", "Banana", "Việt Nam", "Trôn VN" });
             cb_QuocTich.Location = new Point(204, 228);
             cb_QuocTich.Margin = new Padding(4, 5, 4, 5);
             cb_QuocTich.Name = "cb_QuocTich";
@@ -283,20 +300,6 @@
             bt_ThemKhachHang.TabIndex = 4;
             bt_ThemKhachHang.Text = "Thêm khách hàng";
             bt_ThemKhachHang.UseVisualStyleBackColor = true;
-            // 
-            // dtp_NgaySinh
-            // 
-            dtp_NgaySinh.BorderColor = Color.PaleVioletRed;
-            dtp_NgaySinh.BorderSize = 0;
-            dtp_NgaySinh.Font = new Font("Segoe UI", 10F);
-            dtp_NgaySinh.Format = DateTimePickerFormat.Short;
-            dtp_NgaySinh.Location = new Point(204, 44);
-            dtp_NgaySinh.MinimumSize = new Size(0, 35);
-            dtp_NgaySinh.Name = "dtp_NgaySinh";
-            dtp_NgaySinh.Size = new Size(166, 35);
-            dtp_NgaySinh.SkinColor = Color.SeaGreen;
-            dtp_NgaySinh.TabIndex = 38;
-            dtp_NgaySinh.TextColor = Color.White;
             // 
             // ThemKhachHang
             // 

@@ -57,7 +57,7 @@
             gb_ChucNang = new GroupBox();
             bt_DatPhong = new Button();
             gb_DanhSachPhong = new GroupBox();
-            dgv_DanhSachPhong = new DataGridView();
+            dgv_DanhSachPhongTrong = new DataGridView();
             dtp_NgayNhan = new RJControls.RJDatePicker();
             dtp_NgayTra = new RJControls.RJDatePicker();
             gb_TimPhong.SuspendLayout();
@@ -65,7 +65,7 @@
             gb_ThongTinKhachHang.SuspendLayout();
             gb_ChucNang.SuspendLayout();
             gb_DanhSachPhong.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgv_DanhSachPhong).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_DanhSachPhongTrong).BeginInit();
             SuspendLayout();
             // 
             // gb_TimPhong
@@ -92,6 +92,7 @@
             bt_TimKiem.TabIndex = 5;
             bt_TimKiem.Text = "Tìm kiếm";
             bt_TimKiem.UseVisualStyleBackColor = true;
+            bt_TimKiem.Click += bt_TimKiem_Click;
             // 
             // nup_SoNguoiToiDa
             // 
@@ -105,12 +106,11 @@
             // 
             cb_LoaiPhong.Font = new Font("Segoe UI", 10F);
             cb_LoaiPhong.FormattingEnabled = true;
-            cb_LoaiPhong.Items.AddRange(new object[] { "Sut" });
+            cb_LoaiPhong.Items.AddRange(new object[] { "VIP", "NM" });
             cb_LoaiPhong.Location = new Point(166, 27);
             cb_LoaiPhong.Name = "cb_LoaiPhong";
             cb_LoaiPhong.Size = new Size(211, 31);
             cb_LoaiPhong.TabIndex = 1;
-            cb_LoaiPhong.SelectedIndexChanged += cb_LoaiPhong_SelectedIndexChanged;
             // 
             // label4
             // 
@@ -177,7 +177,7 @@
             // 
             cb_QuocTich.Font = new Font("Segoe UI", 10F);
             cb_QuocTich.FormattingEnabled = true;
-            cb_QuocTich.Items.AddRange(new object[] { "Sut" });
+            cb_QuocTich.Items.AddRange(new object[] { "Anh", "Ai Cập", "Banana", "Việt Nam", "Trôn VN" });
             cb_QuocTich.Location = new Point(303, 246);
             cb_QuocTich.Name = "cb_QuocTich";
             cb_QuocTich.Size = new Size(213, 31);
@@ -187,7 +187,7 @@
             // 
             cb_GioiTinh.Font = new Font("Segoe UI", 10F);
             cb_GioiTinh.FormattingEnabled = true;
-            cb_GioiTinh.Items.AddRange(new object[] { "Sut" });
+            cb_GioiTinh.Items.AddRange(new object[] { "Nam", "Nữ" });
             cb_GioiTinh.Location = new Point(303, 187);
             cb_GioiTinh.Name = "cb_GioiTinh";
             cb_GioiTinh.Size = new Size(213, 31);
@@ -263,7 +263,7 @@
             // 
             cb_LoaiKhachHang.Font = new Font("Segoe UI", 10F);
             cb_LoaiKhachHang.FormattingEnabled = true;
-            cb_LoaiKhachHang.Items.AddRange(new object[] { "Sut" });
+            cb_LoaiKhachHang.Items.AddRange(new object[] { "Khách địa phương", "Khách vãng lai", "Khách quốc tế" });
             cb_LoaiKhachHang.Location = new Point(7, 187);
             cb_LoaiKhachHang.Name = "cb_LoaiKhachHang";
             cb_LoaiKhachHang.Size = new Size(224, 31);
@@ -301,9 +301,9 @@
             label5.Font = new Font("Segoe UI", 10F);
             label5.Location = new Point(7, 102);
             label5.Name = "label5";
-            label5.Size = new Size(92, 23);
+            label5.Size = new Size(59, 23);
             label5.TabIndex = 6;
-            label5.Text = "Thẻ CCCD:";
+            label5.Text = "CCCD:";
             // 
             // label6
             // 
@@ -361,7 +361,7 @@
             // 
             // gb_DanhSachPhong
             // 
-            gb_DanhSachPhong.Controls.Add(dgv_DanhSachPhong);
+            gb_DanhSachPhong.Controls.Add(dgv_DanhSachPhongTrong);
             gb_DanhSachPhong.Font = new Font("Segoe UI", 12F);
             gb_DanhSachPhong.ForeColor = Color.Green;
             gb_DanhSachPhong.Location = new Point(573, 12);
@@ -371,26 +371,30 @@
             gb_DanhSachPhong.TabStop = false;
             gb_DanhSachPhong.Text = "Danh sách phòng trống";
             // 
-            // dgv_DanhSachPhong
+            // dgv_DanhSachPhongTrong
             // 
-            dgv_DanhSachPhong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgv_DanhSachPhong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_DanhSachPhongTrong.AllowUserToResizeColumns = false;
+            dgv_DanhSachPhongTrong.AllowUserToResizeRows = false;
+            dgv_DanhSachPhongTrong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_DanhSachPhongTrong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = Color.Green;
             dataGridViewCellStyle1.SelectionBackColor = Color.SeaGreen;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgv_DanhSachPhong.DefaultCellStyle = dataGridViewCellStyle1;
-            dgv_DanhSachPhong.Location = new Point(6, 30);
-            dgv_DanhSachPhong.Name = "dgv_DanhSachPhong";
-            dgv_DanhSachPhong.ReadOnly = true;
-            dgv_DanhSachPhong.RowHeadersVisible = false;
-            dgv_DanhSachPhong.RowHeadersWidth = 51;
-            dgv_DanhSachPhong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_DanhSachPhong.Size = new Size(685, 693);
-            dgv_DanhSachPhong.TabIndex = 0;
+            dgv_DanhSachPhongTrong.DefaultCellStyle = dataGridViewCellStyle1;
+            dgv_DanhSachPhongTrong.Location = new Point(6, 30);
+            dgv_DanhSachPhongTrong.MultiSelect = false;
+            dgv_DanhSachPhongTrong.Name = "dgv_DanhSachPhongTrong";
+            dgv_DanhSachPhongTrong.ReadOnly = true;
+            dgv_DanhSachPhongTrong.RowHeadersVisible = false;
+            dgv_DanhSachPhongTrong.RowHeadersWidth = 51;
+            dgv_DanhSachPhongTrong.RowTemplate.Height = 33;
+            dgv_DanhSachPhongTrong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_DanhSachPhongTrong.Size = new Size(685, 693);
+            dgv_DanhSachPhongTrong.TabIndex = 0;
             // 
             // dtp_NgayNhan
             // 
@@ -437,6 +441,7 @@
             Name = "DatPhong";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DatPhong";
+            FormClosing += DatPhong_FormClosing;
             Load += Form1_Load;
             gb_TimPhong.ResumeLayout(false);
             gb_TimPhong.PerformLayout();
@@ -445,7 +450,7 @@
             gb_ThongTinKhachHang.PerformLayout();
             gb_ChucNang.ResumeLayout(false);
             gb_DanhSachPhong.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgv_DanhSachPhong).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_DanhSachPhongTrong).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -479,7 +484,7 @@
         private Button bt_DatPhong;
         private GroupBox gb_DanhSachPhong;
         private DataGridView dataGridView1;
-        private DataGridView dgv_DanhSachPhong;
+        private DataGridView dgv_DanhSachPhongTrong;
         private RJControls.RJDatePicker dtp_NgaySinh;
         private RJControls.RJDatePicker dtp_NgayNhan;
         private RJControls.RJDatePicker dtp_NgayTra;

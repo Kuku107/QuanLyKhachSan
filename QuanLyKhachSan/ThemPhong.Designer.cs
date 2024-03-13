@@ -39,8 +39,6 @@
             label5 = new Label();
             tb_TenPhong = new TextBox();
             label4 = new Label();
-            tb_MaPhong = new TextBox();
-            label3 = new Label();
             groupBox2 = new GroupBox();
             bt_ThemPhong = new Button();
             groupBox1.SuspendLayout();
@@ -79,8 +77,6 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(tb_TenPhong);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(tb_MaPhong);
-            groupBox1.Controls.Add(label3);
             groupBox1.Font = new Font("Segoe UI", 12F);
             groupBox1.ForeColor = Color.Green;
             groupBox1.Location = new Point(13, 74);
@@ -93,9 +89,9 @@
             // nud_SoNguoiToiDa
             // 
             nud_SoNguoiToiDa.Font = new Font("Segoe UI", 10F);
-            nud_SoNguoiToiDa.Location = new Point(509, 104);
+            nud_SoNguoiToiDa.Location = new Point(274, 67);
             nud_SoNguoiToiDa.Name = "nud_SoNguoiToiDa";
-            nud_SoNguoiToiDa.Size = new Size(182, 30);
+            nud_SoNguoiToiDa.Size = new Size(188, 30);
             nud_SoNguoiToiDa.TabIndex = 15;
             // 
             // label7
@@ -103,7 +99,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10F);
             label7.ForeColor = Color.Green;
-            label7.Location = new Point(509, 75);
+            label7.Location = new Point(274, 41);
             label7.Name = "label7";
             label7.Size = new Size(131, 23);
             label7.TabIndex = 14;
@@ -132,7 +128,7 @@
             // 
             cb_LoaiPhong.Font = new Font("Segoe UI", 10F);
             cb_LoaiPhong.FormattingEnabled = true;
-            cb_LoaiPhong.Location = new Point(274, 56);
+            cb_LoaiPhong.Location = new Point(6, 67);
             cb_LoaiPhong.Name = "cb_LoaiPhong";
             cb_LoaiPhong.Size = new Size(188, 31);
             cb_LoaiPhong.TabIndex = 11;
@@ -142,7 +138,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10F);
             label5.ForeColor = Color.Green;
-            label5.Location = new Point(274, 30);
+            label5.Location = new Point(5, 41);
             label5.Name = "label5";
             label5.Size = new Size(100, 23);
             label5.TabIndex = 10;
@@ -166,26 +162,6 @@
             label4.Size = new Size(95, 23);
             label4.TabIndex = 8;
             label4.Text = "Tên Phòng:";
-            // 
-            // tb_MaPhong
-            // 
-            tb_MaPhong.Font = new Font("Segoe UI", 10F);
-            tb_MaPhong.Location = new Point(5, 56);
-            tb_MaPhong.Name = "tb_MaPhong";
-            tb_MaPhong.ReadOnly = true;
-            tb_MaPhong.Size = new Size(188, 30);
-            tb_MaPhong.TabIndex = 7;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10F);
-            label3.ForeColor = Color.Green;
-            label3.Location = new Point(6, 30);
-            label3.Name = "label3";
-            label3.Size = new Size(93, 23);
-            label3.TabIndex = 6;
-            label3.Text = "Mã Phòng:";
             // 
             // groupBox2
             // 
@@ -233,8 +209,6 @@
         private Label label2;
         private Label label1;
         private GroupBox groupBox1;
-        private TextBox tb_MaPhong;
-        private Label label3;
         private TextBox tb_TenPhong;
         private Label label4;
         private TextBox tb_GiaPhong;

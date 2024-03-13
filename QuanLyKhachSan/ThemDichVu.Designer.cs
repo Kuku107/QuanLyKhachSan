@@ -103,6 +103,7 @@
             // 
             cb_LoaiDichVu.Font = new Font("Microsoft Sans Serif", 10F);
             cb_LoaiDichVu.FormattingEnabled = true;
+            cb_LoaiDichVu.Items.AddRange(new object[] { "Nước uống", "Đồ ăn", "Giặt là", "Vệ sinh" });
             cb_LoaiDichVu.Location = new Point(18, 139);
             cb_LoaiDichVu.Name = "cb_LoaiDichVu";
             cb_LoaiDichVu.Size = new Size(308, 28);

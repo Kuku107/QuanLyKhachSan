@@ -30,7 +30,7 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             groupBox2 = new GroupBox();
-            dgv_DanhSachPhongDangThue = new DataGridView();
+            dgv_DanhSachPhongKin = new DataGridView();
             bt_ThanhToan = new Button();
             groupBox1 = new GroupBox();
             bt_TimKiem = new Button();
@@ -40,13 +40,13 @@
             label3 = new Label();
             bt_DichVu = new Button();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgv_DanhSachPhongDangThue).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_DanhSachPhongKin).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dgv_DanhSachPhongDangThue);
+            groupBox2.Controls.Add(dgv_DanhSachPhongKin);
             groupBox2.Font = new Font("Segoe UI", 12F);
             groupBox2.ForeColor = Color.Green;
             groupBox2.Location = new Point(13, 12);
@@ -54,28 +54,32 @@
             groupBox2.Size = new Size(1257, 567);
             groupBox2.TabIndex = 5;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Danh sách phòng đang thuê";
+            groupBox2.Text = "Danh sách phòng kín";
             // 
-            // dgv_DanhSachPhongDangThue
+            // dgv_DanhSachPhongKin
             // 
-            dgv_DanhSachPhongDangThue.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgv_DanhSachPhongDangThue.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_DanhSachPhongKin.AllowUserToResizeColumns = false;
+            dgv_DanhSachPhongKin.AllowUserToResizeRows = false;
+            dgv_DanhSachPhongKin.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_DanhSachPhongKin.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = Color.Green;
             dataGridViewCellStyle1.SelectionBackColor = Color.SeaGreen;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgv_DanhSachPhongDangThue.DefaultCellStyle = dataGridViewCellStyle1;
-            dgv_DanhSachPhongDangThue.Location = new Point(6, 33);
-            dgv_DanhSachPhongDangThue.Name = "dgv_DanhSachPhongDangThue";
-            dgv_DanhSachPhongDangThue.ReadOnly = true;
-            dgv_DanhSachPhongDangThue.RowHeadersVisible = false;
-            dgv_DanhSachPhongDangThue.RowHeadersWidth = 51;
-            dgv_DanhSachPhongDangThue.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_DanhSachPhongDangThue.Size = new Size(1245, 528);
-            dgv_DanhSachPhongDangThue.TabIndex = 0;
+            dgv_DanhSachPhongKin.DefaultCellStyle = dataGridViewCellStyle1;
+            dgv_DanhSachPhongKin.Location = new Point(6, 33);
+            dgv_DanhSachPhongKin.MultiSelect = false;
+            dgv_DanhSachPhongKin.Name = "dgv_DanhSachPhongKin";
+            dgv_DanhSachPhongKin.ReadOnly = true;
+            dgv_DanhSachPhongKin.RowHeadersVisible = false;
+            dgv_DanhSachPhongKin.RowHeadersWidth = 51;
+            dgv_DanhSachPhongKin.RowTemplate.Height = 33;
+            dgv_DanhSachPhongKin.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_DanhSachPhongKin.Size = new Size(1245, 528);
+            dgv_DanhSachPhongKin.TabIndex = 0;
             // 
             // bt_ThanhToan
             // 
@@ -112,11 +116,13 @@
             bt_TimKiem.TabIndex = 3;
             bt_TimKiem.Text = "Tìm kiếm";
             bt_TimKiem.UseVisualStyleBackColor = true;
+            bt_TimKiem.Click += bt_TimKiem_Click;
             // 
             // cb_LoaiPhong
             // 
             cb_LoaiPhong.Font = new Font("Segoe UI", 10F);
             cb_LoaiPhong.FormattingEnabled = true;
+            cb_LoaiPhong.Items.AddRange(new object[] { "VIP", "NM" });
             cb_LoaiPhong.Location = new Point(134, 104);
             cb_LoaiPhong.Name = "cb_LoaiPhong";
             cb_LoaiPhong.Size = new Size(220, 31);
@@ -175,8 +181,10 @@
             Name = "DichVuVaThanhToan";
             StartPosition = FormStartPosition.CenterScreen;
             Text = " ";
+            FormClosing += DichVuVaThanhToan_FormClosing;
+            Load += DichVuVaThanhToan_Load;
             groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgv_DanhSachPhongDangThue).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_DanhSachPhongKin).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -194,6 +202,6 @@
         private Button bt_TimKiem;
         private Button bt_DichVu;
         private DataGridView dgv_DanhSachPhong;
-        private DataGridView dgv_DanhSachPhongDangThue;
+        private DataGridView dgv_DanhSachPhongKin;
     }
 }

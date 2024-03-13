@@ -17,7 +17,6 @@ namespace QuanLyKhachSan
         private SqlCommand command;
         private SqlDataAdapter adapter = new SqlDataAdapter();
         private DataTable table = new DataTable();
-        private string connectionString = "Data Source=DESKTOP-E5D90BN;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
         public QuanLyPhong()
         {
             InitializeComponent();
@@ -29,7 +28,7 @@ namespace QuanLyKhachSan
             themPhong.ShowDialog();
         }
 
-        public void loadPhong()
+        public void loadDataGridView()
         {
             command = DSPconnection.CreateCommand();
             command.CommandText = "SELECT * FROM DANHSACHPHONG";
@@ -39,14 +38,30 @@ namespace QuanLyKhachSan
             dgv_DanhSachPhong.DataSource = table;
         }
 
-        private void QuanLyPhong_Load(object sender, EventArgs e)
+        public void loadDataGridViewWithQuery(string query)
         {
-            DSPconnection = new SqlConnection(connectionString);
-            DSPconnection.Open();
-            loadPhong();
+            command = DSPconnection.CreateCommand();
+            command.CommandText = query;
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            dgv_DanhSachPhong.DataSource = table;
         }
 
-        ~QuanLyPhong()
+        private void QuanLyPhong_Load(object sender, EventArgs e)
+        {
+            DSPconnection = new SqlConnection(ConstantVariable.connectionString);
+            DSPconnection.Open();
+            loadDataGridView();
+        }
+
+        private void bt_TimKiem_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM DANHSACHPHONG WHERE [Tên Phòng] = N'" + tb_TenPhongTim.Text + "'";
+            loadDataGridViewWithQuery(query);
+        }
+
+        private void QuanLyPhong_FormClosing(object sender, FormClosingEventArgs e)
         {
             DSPconnection.Close();
         }

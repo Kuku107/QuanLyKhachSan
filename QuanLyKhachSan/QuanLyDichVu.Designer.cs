@@ -38,7 +38,9 @@
             lb_LoaiDichVu = new Label();
             bt_TimKiem = new Button();
             gb_ThongTinDichVu = new GroupBox();
+            tb_MaDichVu = new TextBox();
             tb_TenDichVu = new TextBox();
+            label1 = new Label();
             label3 = new Label();
             tb_Gia = new TextBox();
             label4 = new Label();
@@ -97,10 +99,10 @@
             // 
             bt_Them.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bt_Them.ForeColor = Color.Green;
-            bt_Them.Location = new Point(1, 89);
+            bt_Them.Location = new Point(8, 89);
             bt_Them.Margin = new Padding(4, 3, 4, 3);
             bt_Them.Name = "bt_Them";
-            bt_Them.Size = new Size(246, 38);
+            bt_Them.Size = new Size(239, 38);
             bt_Them.TabIndex = 3;
             bt_Them.Text = "Thêm";
             bt_Them.UseVisualStyleBackColor = true;
@@ -126,6 +128,7 @@
             // 
             cb_LoaiDichVuTim.Font = new Font("Microsoft Sans Serif", 10.2F);
             cb_LoaiDichVuTim.FormattingEnabled = true;
+            cb_LoaiDichVuTim.Items.AddRange(new object[] { "Nước uống", "Đồ ăn", "Giặt là", "Vệ sinh" });
             cb_LoaiDichVuTim.Location = new Point(8, 81);
             cb_LoaiDichVuTim.Margin = new Padding(4, 3, 4, 3);
             cb_LoaiDichVuTim.Name = "cb_LoaiDichVuTim";
@@ -140,25 +143,28 @@
             lb_LoaiDichVu.Location = new Point(8, 47);
             lb_LoaiDichVu.Margin = new Padding(4, 0, 4, 0);
             lb_LoaiDichVu.Name = "lb_LoaiDichVu";
-            lb_LoaiDichVu.Size = new Size(99, 20);
+            lb_LoaiDichVu.Size = new Size(104, 20);
             lb_LoaiDichVu.TabIndex = 2;
-            lb_LoaiDichVu.Text = "Loại dịch vụ";
+            lb_LoaiDichVu.Text = "Loại dịch vụ:";
             // 
             // bt_TimKiem
             // 
             bt_TimKiem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bt_TimKiem.ForeColor = Color.Green;
-            bt_TimKiem.Location = new Point(326, 73);
+            bt_TimKiem.Location = new Point(312, 72);
             bt_TimKiem.Margin = new Padding(4, 3, 4, 3);
             bt_TimKiem.Name = "bt_TimKiem";
-            bt_TimKiem.Size = new Size(225, 38);
+            bt_TimKiem.Size = new Size(239, 38);
             bt_TimKiem.TabIndex = 2;
             bt_TimKiem.Text = "Tìm kiếm ";
             bt_TimKiem.UseVisualStyleBackColor = true;
+            bt_TimKiem.Click += bt_TimKiem_Click;
             // 
             // gb_ThongTinDichVu
             // 
+            gb_ThongTinDichVu.Controls.Add(tb_MaDichVu);
             gb_ThongTinDichVu.Controls.Add(tb_TenDichVu);
+            gb_ThongTinDichVu.Controls.Add(label1);
             gb_ThongTinDichVu.Controls.Add(label3);
             gb_ThongTinDichVu.Controls.Add(tb_Gia);
             gb_ThongTinDichVu.Controls.Add(label4);
@@ -175,20 +181,39 @@
             gb_ThongTinDichVu.TabStop = false;
             gb_ThongTinDichVu.Text = "Thông tin dịch vụ";
             // 
+            // tb_MaDichVu
+            // 
+            tb_MaDichVu.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_MaDichVu.Location = new Point(9, 70);
+            tb_MaDichVu.Name = "tb_MaDichVu";
+            tb_MaDichVu.ReadOnly = true;
+            tb_MaDichVu.Size = new Size(234, 30);
+            tb_MaDichVu.TabIndex = 16;
+            // 
             // tb_TenDichVu
             // 
             tb_TenDichVu.Font = new Font("Microsoft Sans Serif", 10.2F);
-            tb_TenDichVu.Location = new Point(9, 97);
+            tb_TenDichVu.Location = new Point(9, 147);
             tb_TenDichVu.Margin = new Padding(4, 3, 4, 3);
             tb_TenDichVu.Name = "tb_TenDichVu";
-            tb_TenDichVu.Size = new Size(235, 27);
+            tb_TenDichVu.Size = new Size(234, 27);
             tb_TenDichVu.TabIndex = 7;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(9, 44);
+            label1.Name = "label1";
+            label1.Size = new Size(98, 23);
+            label1.TabIndex = 15;
+            label1.Text = "Mã dịch vụ:";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(8, 64);
+            label3.Location = new Point(9, 121);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(100, 23);
@@ -198,17 +223,17 @@
             // tb_Gia
             // 
             tb_Gia.Font = new Font("Microsoft Sans Serif", 10.2F);
-            tb_Gia.Location = new Point(8, 277);
+            tb_Gia.Location = new Point(9, 320);
             tb_Gia.Margin = new Padding(4, 3, 4, 3);
             tb_Gia.Name = "tb_Gia";
-            tb_Gia.Size = new Size(242, 27);
+            tb_Gia.Size = new Size(241, 27);
             tb_Gia.TabIndex = 5;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 10.2F);
-            label4.Location = new Point(8, 254);
+            label4.Location = new Point(9, 297);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(40, 20);
@@ -219,17 +244,18 @@
             // 
             cb_LoaiDichVu.Font = new Font("Microsoft Sans Serif", 10.2F);
             cb_LoaiDichVu.FormattingEnabled = true;
-            cb_LoaiDichVu.Location = new Point(8, 184);
+            cb_LoaiDichVu.Items.AddRange(new object[] { "Nước uống", "Đồ ăn", "Giặt là", "Vệ sinh" });
+            cb_LoaiDichVu.Location = new Point(9, 235);
             cb_LoaiDichVu.Margin = new Padding(4, 3, 4, 3);
             cb_LoaiDichVu.Name = "cb_LoaiDichVu";
-            cb_LoaiDichVu.Size = new Size(235, 28);
+            cb_LoaiDichVu.Size = new Size(234, 28);
             cb_LoaiDichVu.TabIndex = 3;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 10.2F);
-            label5.Location = new Point(8, 161);
+            label5.Location = new Point(9, 212);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(104, 20);
@@ -257,18 +283,19 @@
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = Color.Green;
             dataGridViewCellStyle1.SelectionBackColor = Color.SeaGreen;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dgv_DanhSachDichVu.DefaultCellStyle = dataGridViewCellStyle1;
             dgv_DanhSachDichVu.Location = new Point(8, 29);
             dgv_DanhSachDichVu.Margin = new Padding(4, 3, 4, 3);
+            dgv_DanhSachDichVu.MultiSelect = false;
             dgv_DanhSachDichVu.Name = "dgv_DanhSachDichVu";
             dgv_DanhSachDichVu.ReadOnly = true;
             dgv_DanhSachDichVu.RowHeadersVisible = false;
             dgv_DanhSachDichVu.RowHeadersWidth = 62;
-            dgv_DanhSachDichVu.RowTemplate.Height = 28;
+            dgv_DanhSachDichVu.RowTemplate.Height = 33;
             dgv_DanhSachDichVu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_DanhSachDichVu.Size = new Size(658, 694);
             dgv_DanhSachDichVu.TabIndex = 0;
@@ -288,6 +315,8 @@
             Name = "QuanLyDichVu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QuanLyDichVu";
+            FormClosing += QuanLyDichVu_FormClosing;
+            Load += QuanLyDichVu_Load;
             groupBox3.ResumeLayout(false);
             gb_TimKiem.ResumeLayout(false);
             gb_TimKiem.PerformLayout();
@@ -320,5 +349,7 @@
         private ComboBox cb_LoaiDichVuTim;
         private Label lb_LoaiDichVu;
         private DataGridView dgv_DanhSachDichVu;
+        private Label label1;
+        private TextBox tb_MaDichVu;
     }
 }

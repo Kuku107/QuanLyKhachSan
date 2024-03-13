@@ -84,6 +84,7 @@
             bt_TimKiem.TabIndex = 2;
             bt_TimKiem.Text = "Tìm kiếm ";
             bt_TimKiem.UseVisualStyleBackColor = true;
+            bt_TimKiem.Click += bt_TimKiem_Click;
             // 
             // tb_TenPhongTim
             // 
@@ -180,6 +181,7 @@
             // 
             cb_LoaiPhong.Font = new Font("Segoe UI", 10F);
             cb_LoaiPhong.FormattingEnabled = true;
+            cb_LoaiPhong.Items.AddRange(new object[] { "VIP", "NM" });
             cb_LoaiPhong.Location = new Point(179, 55);
             cb_LoaiPhong.Margin = new Padding(3, 4, 3, 4);
             cb_LoaiPhong.Name = "cb_LoaiPhong";
@@ -200,6 +202,7 @@
             // 
             cb_TrangThai.Font = new Font("Segoe UI", 10F);
             cb_TrangThai.FormattingEnabled = true;
+            cb_TrangThai.Items.AddRange(new object[] { "Trống", "Kín" });
             cb_TrangThai.Location = new Point(11, 199);
             cb_TrangThai.Margin = new Padding(3, 4, 3, 4);
             cb_TrangThai.Name = "cb_TrangThai";
@@ -303,16 +306,18 @@
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = Color.Green;
             dataGridViewCellStyle1.SelectionBackColor = Color.SeaGreen;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dgv_DanhSachPhong.DefaultCellStyle = dataGridViewCellStyle1;
             dgv_DanhSachPhong.Location = new Point(6, 27);
+            dgv_DanhSachPhong.MultiSelect = false;
             dgv_DanhSachPhong.Name = "dgv_DanhSachPhong";
             dgv_DanhSachPhong.ReadOnly = true;
             dgv_DanhSachPhong.RowHeadersVisible = false;
             dgv_DanhSachPhong.RowHeadersWidth = 51;
+            dgv_DanhSachPhong.RowTemplate.Height = 33;
             dgv_DanhSachPhong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_DanhSachPhong.Size = new Size(897, 693);
             dgv_DanhSachPhong.TabIndex = 0;
@@ -330,6 +335,7 @@
             Name = "QuanLyPhong";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QuanLyPhong";
+            FormClosing += QuanLyPhong_FormClosing;
             Load += QuanLyPhong_Load;
             groupTimKiem.ResumeLayout(false);
             groupTimKiem.PerformLayout();
