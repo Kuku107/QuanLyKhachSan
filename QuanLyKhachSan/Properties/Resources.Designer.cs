@@ -63,6 +63,26 @@ namespace QuanLyKhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendarDark {
+            get {
+                object obj = ResourceManager.GetObject("calendarDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendarWhite {
+            get {
+                object obj = ResourceManager.GetObject("calendarWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_flat_hotel_logoicon_graphic_icon_png_image_7085107 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-flat-hotel-logoicon-graphic-icon-png-image_7085107", resourceCulture);

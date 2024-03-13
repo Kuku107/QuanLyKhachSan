@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             gb_TimPhong = new GroupBox();
             bt_TimKiem = new Button();
             nup_SoNguoiToiDa = new NumericUpDown();
@@ -35,7 +36,7 @@
             label4 = new Label();
             label3 = new Label();
             gb_ThongTinKhachHang = new GroupBox();
-            dtp_NgaySinh = new DateTimePicker();
+            dtp_NgaySinh = new RJControls.RJDatePicker();
             cb_QuocTich = new ComboBox();
             cb_GioiTinh = new ComboBox();
             tb_DiaChi = new TextBox();
@@ -52,13 +53,13 @@
             label5 = new Label();
             label6 = new Label();
             label14 = new Label();
-            dtp_NgayNhan = new DateTimePicker();
-            dtp_NgayTra = new DateTimePicker();
             label15 = new Label();
             gb_ChucNang = new GroupBox();
             bt_DatPhong = new Button();
             gb_DanhSachPhong = new GroupBox();
             dgv_DanhSachPhong = new DataGridView();
+            dtp_NgayNhan = new RJControls.RJDatePicker();
+            dtp_NgayTra = new RJControls.RJDatePicker();
             gb_TimPhong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nup_SoNguoiToiDa).BeginInit();
             gb_ThongTinKhachHang.SuspendLayout();
@@ -160,18 +161,17 @@
             // 
             // dtp_NgaySinh
             // 
-            dtp_NgaySinh.CalendarFont = new Font("Segoe UI", 10F);
-            dtp_NgaySinh.CalendarForeColor = Color.Green;
-            dtp_NgaySinh.CalendarMonthBackground = Color.Green;
-            dtp_NgaySinh.CalendarTitleBackColor = Color.Green;
-            dtp_NgaySinh.CalendarTitleForeColor = Color.Green;
-            dtp_NgaySinh.CalendarTrailingForeColor = Color.Green;
+            dtp_NgaySinh.BorderColor = Color.PaleVioletRed;
+            dtp_NgaySinh.BorderSize = 0;
             dtp_NgaySinh.Font = new Font("Segoe UI", 10F);
             dtp_NgaySinh.Format = DateTimePickerFormat.Short;
-            dtp_NgaySinh.Location = new Point(303, 69);
+            dtp_NgaySinh.Location = new Point(303, 64);
+            dtp_NgaySinh.MinimumSize = new Size(0, 35);
             dtp_NgaySinh.Name = "dtp_NgaySinh";
-            dtp_NgaySinh.Size = new Size(213, 30);
-            dtp_NgaySinh.TabIndex = 25;
+            dtp_NgaySinh.Size = new Size(213, 35);
+            dtp_NgaySinh.SkinColor = Color.SeaGreen;
+            dtp_NgaySinh.TabIndex = 28;
+            dtp_NgaySinh.TextColor = Color.White;
             // 
             // cb_QuocTich
             // 
@@ -235,7 +235,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 10F);
-            label9.Location = new Point(303, 43);
+            label9.Location = new Point(301, 38);
             label9.Name = "label9";
             label9.Size = new Size(90, 23);
             label9.TabIndex = 13;
@@ -309,7 +309,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10F);
-            label6.Location = new Point(7, 43);
+            label6.Location = new Point(7, 38);
             label6.Name = "label6";
             label6.Size = new Size(88, 23);
             label6.TabIndex = 7;
@@ -326,42 +326,12 @@
             label14.TabIndex = 21;
             label14.Text = "Ngày nhận";
             // 
-            // dtp_NgayNhan
-            // 
-            dtp_NgayNhan.CalendarFont = new Font("Segoe UI", 10F);
-            dtp_NgayNhan.CalendarForeColor = Color.Green;
-            dtp_NgayNhan.CalendarMonthBackground = Color.Green;
-            dtp_NgayNhan.CalendarTitleBackColor = Color.Green;
-            dtp_NgayNhan.CalendarTitleForeColor = Color.Green;
-            dtp_NgayNhan.CalendarTrailingForeColor = Color.Green;
-            dtp_NgayNhan.Font = new Font("Segoe UI", 10F);
-            dtp_NgayNhan.Format = DateTimePickerFormat.Short;
-            dtp_NgayNhan.Location = new Point(19, 202);
-            dtp_NgayNhan.Name = "dtp_NgayNhan";
-            dtp_NgayNhan.Size = new Size(231, 30);
-            dtp_NgayNhan.TabIndex = 21;
-            // 
-            // dtp_NgayTra
-            // 
-            dtp_NgayTra.CalendarFont = new Font("Segoe UI", 10F);
-            dtp_NgayTra.CalendarForeColor = Color.Green;
-            dtp_NgayTra.CalendarMonthBackground = Color.Green;
-            dtp_NgayTra.CalendarTitleBackColor = Color.Green;
-            dtp_NgayTra.CalendarTitleForeColor = Color.Green;
-            dtp_NgayTra.CalendarTrailingForeColor = Color.Green;
-            dtp_NgayTra.Font = new Font("Segoe UI", 10F);
-            dtp_NgayTra.Format = DateTimePickerFormat.Short;
-            dtp_NgayTra.Location = new Point(18, 261);
-            dtp_NgayTra.Name = "dtp_NgayTra";
-            dtp_NgayTra.Size = new Size(232, 30);
-            dtp_NgayTra.TabIndex = 22;
-            // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 10F);
             label15.ForeColor = Color.Green;
-            label15.Location = new Point(18, 235);
+            label15.Location = new Point(19, 241);
             label15.Name = "label15";
             label15.Size = new Size(76, 23);
             label15.TabIndex = 23;
@@ -405,22 +375,61 @@
             // 
             dgv_DanhSachPhong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_DanhSachPhong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgv_DanhSachPhong.DefaultCellStyle = dataGridViewCellStyle1;
             dgv_DanhSachPhong.Location = new Point(6, 30);
             dgv_DanhSachPhong.Name = "dgv_DanhSachPhong";
+            dgv_DanhSachPhong.ReadOnly = true;
+            dgv_DanhSachPhong.RowHeadersVisible = false;
             dgv_DanhSachPhong.RowHeadersWidth = 51;
+            dgv_DanhSachPhong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_DanhSachPhong.Size = new Size(685, 693);
             dgv_DanhSachPhong.TabIndex = 0;
+            // 
+            // dtp_NgayNhan
+            // 
+            dtp_NgayNhan.BorderColor = Color.PaleVioletRed;
+            dtp_NgayNhan.BorderSize = 0;
+            dtp_NgayNhan.Font = new Font("Segoe UI", 10F);
+            dtp_NgayNhan.Format = DateTimePickerFormat.Short;
+            dtp_NgayNhan.Location = new Point(26, 202);
+            dtp_NgayNhan.MinimumSize = new Size(0, 35);
+            dtp_NgayNhan.Name = "dtp_NgayNhan";
+            dtp_NgayNhan.Size = new Size(224, 35);
+            dtp_NgayNhan.SkinColor = Color.SeaGreen;
+            dtp_NgayNhan.TabIndex = 26;
+            dtp_NgayNhan.TextColor = Color.White;
+            // 
+            // dtp_NgayTra
+            // 
+            dtp_NgayTra.BorderColor = Color.PaleVioletRed;
+            dtp_NgayTra.BorderSize = 0;
+            dtp_NgayTra.Font = new Font("Segoe UI", 10F);
+            dtp_NgayTra.Format = DateTimePickerFormat.Short;
+            dtp_NgayTra.Location = new Point(25, 267);
+            dtp_NgayTra.MinimumSize = new Size(0, 35);
+            dtp_NgayTra.Name = "dtp_NgayTra";
+            dtp_NgayTra.Size = new Size(225, 35);
+            dtp_NgayTra.SkinColor = Color.SeaGreen;
+            dtp_NgayTra.TabIndex = 27;
+            dtp_NgayTra.TextColor = Color.White;
             // 
             // DatPhong
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1282, 753);
+            Controls.Add(dtp_NgayTra);
+            Controls.Add(dtp_NgayNhan);
             Controls.Add(gb_DanhSachPhong);
             Controls.Add(gb_ChucNang);
-            Controls.Add(dtp_NgayTra);
             Controls.Add(label15);
-            Controls.Add(dtp_NgayNhan);
             Controls.Add(label14);
             Controls.Add(gb_ThongTinKhachHang);
             Controls.Add(gb_TimPhong);
@@ -465,14 +474,14 @@
         private ComboBox cb_GioiTinh;
         private TextBox tb_DiaChi;
         private Label label14;
-        private DateTimePicker dtp_NgayNhan;
-        private DateTimePicker dtp_NgayTra;
         private Label label15;
         private GroupBox gb_ChucNang;
         private Button bt_DatPhong;
-        private DateTimePicker dtp_NgaySinh;
         private GroupBox gb_DanhSachPhong;
         private DataGridView dataGridView1;
         private DataGridView dgv_DanhSachPhong;
+        private RJControls.RJDatePicker dtp_NgaySinh;
+        private RJControls.RJDatePicker dtp_NgayNhan;
+        private RJControls.RJDatePicker dtp_NgayTra;
     }
 }

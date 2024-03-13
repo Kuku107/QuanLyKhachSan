@@ -44,11 +44,11 @@
             tb_CCCD = new TextBox();
             label6 = new Label();
             label4 = new Label();
-            dtp_NgaySinh = new DateTimePicker();
             tb_HoTen = new TextBox();
             label3 = new Label();
             groupBox4 = new GroupBox();
             bt_ThemKhachHang = new Button();
+            dtp_NgaySinh = new RJControls.RJDatePicker();
             groupBox1.SuspendLayout();
             groupBox4.SuspendLayout();
             SuspendLayout();
@@ -76,6 +76,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(dtp_NgaySinh);
             groupBox1.Controls.Add(tb_SoDienThoai);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(cb_GioiTinh);
@@ -89,7 +90,6 @@
             groupBox1.Controls.Add(tb_CCCD);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(dtp_NgaySinh);
             groupBox1.Controls.Add(tb_HoTen);
             groupBox1.Controls.Add(label3);
             groupBox1.Font = new Font("Segoe UI", 12F);
@@ -195,7 +195,7 @@
             tb_DiaChi.Location = new Point(203, 167);
             tb_DiaChi.Margin = new Padding(4, 5, 4, 5);
             tb_DiaChi.Name = "tb_DiaChi";
-            tb_DiaChi.Size = new Size(162, 30);
+            tb_DiaChi.Size = new Size(167, 30);
             tb_DiaChi.TabIndex = 28;
             // 
             // label7
@@ -239,16 +239,6 @@
             label4.Size = new Size(93, 23);
             label4.TabIndex = 24;
             label4.Text = "Họ và tên: ";
-            // 
-            // dtp_NgaySinh
-            // 
-            dtp_NgaySinh.Font = new Font("Segoe UI", 10F);
-            dtp_NgaySinh.Format = DateTimePickerFormat.Short;
-            dtp_NgaySinh.Location = new Point(208, 46);
-            dtp_NgaySinh.Margin = new Padding(4, 5, 4, 5);
-            dtp_NgaySinh.Name = "dtp_NgaySinh";
-            dtp_NgaySinh.Size = new Size(162, 30);
-            dtp_NgaySinh.TabIndex = 23;
             // 
             // tb_HoTen
             // 
@@ -294,6 +284,20 @@
             bt_ThemKhachHang.Text = "Thêm khách hàng";
             bt_ThemKhachHang.UseVisualStyleBackColor = true;
             // 
+            // dtp_NgaySinh
+            // 
+            dtp_NgaySinh.BorderColor = Color.PaleVioletRed;
+            dtp_NgaySinh.BorderSize = 0;
+            dtp_NgaySinh.Font = new Font("Segoe UI", 10F);
+            dtp_NgaySinh.Format = DateTimePickerFormat.Short;
+            dtp_NgaySinh.Location = new Point(204, 44);
+            dtp_NgaySinh.MinimumSize = new Size(0, 35);
+            dtp_NgaySinh.Name = "dtp_NgaySinh";
+            dtp_NgaySinh.Size = new Size(166, 35);
+            dtp_NgaySinh.SkinColor = Color.SeaGreen;
+            dtp_NgaySinh.TabIndex = 38;
+            dtp_NgaySinh.TextColor = Color.White;
+            // 
             // ThemKhachHang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -331,10 +335,10 @@
         private TextBox tb_CCCD;
         private Label label6;
         private Label label4;
-        private DateTimePicker dtp_NgaySinh;
         private TextBox tb_HoTen;
         private Label label3;
         private GroupBox groupBox4;
         private Button bt_ThemKhachHang;
+        private RJControls.RJDatePicker dtp_NgaySinh;
     }
 }

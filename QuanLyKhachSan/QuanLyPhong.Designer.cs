@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             groupTimKiem = new GroupBox();
             bt_TimKiem = new Button();
             tb_TenPhongTim = new TextBox();
@@ -299,9 +300,20 @@
             // 
             dgv_DanhSachPhong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_DanhSachPhong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgv_DanhSachPhong.DefaultCellStyle = dataGridViewCellStyle1;
             dgv_DanhSachPhong.Location = new Point(6, 27);
             dgv_DanhSachPhong.Name = "dgv_DanhSachPhong";
+            dgv_DanhSachPhong.ReadOnly = true;
+            dgv_DanhSachPhong.RowHeadersVisible = false;
             dgv_DanhSachPhong.RowHeadersWidth = 51;
+            dgv_DanhSachPhong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_DanhSachPhong.Size = new Size(897, 693);
             dgv_DanhSachPhong.TabIndex = 0;
             // 
@@ -318,6 +330,7 @@
             Name = "QuanLyPhong";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QuanLyPhong";
+            Load += QuanLyPhong_Load;
             groupTimKiem.ResumeLayout(false);
             groupTimKiem.PerformLayout();
             groupTTinP.ResumeLayout(false);

@@ -1,3 +1,4 @@
+using System.Drawing;
 namespace QuanLyKhachSan
 {
     public partial class DatPhong : Form
@@ -9,6 +10,7 @@ namespace QuanLyKhachSan
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           
         }
 
         private void bt_DatPhong_Click(object sender, EventArgs e)

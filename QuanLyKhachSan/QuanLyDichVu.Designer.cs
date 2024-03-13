@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             groupBox3 = new GroupBox();
             bt_Xoa = new Button();
             bt_CapNhat = new Button();
@@ -253,11 +254,22 @@
             // 
             dgv_DanhSachDichVu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_DanhSachDichVu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgv_DanhSachDichVu.DefaultCellStyle = dataGridViewCellStyle1;
             dgv_DanhSachDichVu.Location = new Point(8, 29);
             dgv_DanhSachDichVu.Margin = new Padding(4, 3, 4, 3);
             dgv_DanhSachDichVu.Name = "dgv_DanhSachDichVu";
+            dgv_DanhSachDichVu.ReadOnly = true;
+            dgv_DanhSachDichVu.RowHeadersVisible = false;
             dgv_DanhSachDichVu.RowHeadersWidth = 62;
             dgv_DanhSachDichVu.RowTemplate.Height = 28;
+            dgv_DanhSachDichVu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_DanhSachDichVu.Size = new Size(658, 694);
             dgv_DanhSachDichVu.TabIndex = 0;
             // 

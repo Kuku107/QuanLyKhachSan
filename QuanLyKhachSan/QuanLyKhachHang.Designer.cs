@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             bt_Tim = new Button();
             tb_CCCDTim = new TextBox();
@@ -35,6 +36,7 @@
             label12 = new Label();
             tb_HoVaTenTim = new TextBox();
             groupBox3 = new GroupBox();
+            dtp_NgaySinh = new RJControls.RJDatePicker();
             cb_GioiTinh = new ComboBox();
             label10 = new Label();
             cb_LoaiKhachHang = new ComboBox();
@@ -48,7 +50,6 @@
             tb_SoDienThoai = new TextBox();
             label5 = new Label();
             label4 = new Label();
-            dtp_NgaySinh = new DateTimePicker();
             tb_HoVaTen = new TextBox();
             label11 = new Label();
             groupBox4 = new GroupBox();
@@ -132,6 +133,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(dtp_NgaySinh);
             groupBox3.Controls.Add(cb_GioiTinh);
             groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(cb_LoaiKhachHang);
@@ -145,7 +147,6 @@
             groupBox3.Controls.Add(tb_SoDienThoai);
             groupBox3.Controls.Add(label5);
             groupBox3.Controls.Add(label4);
-            groupBox3.Controls.Add(dtp_NgaySinh);
             groupBox3.Controls.Add(tb_HoVaTen);
             groupBox3.Controls.Add(label11);
             groupBox3.Font = new Font("Segoe UI", 12F);
@@ -158,6 +159,20 @@
             groupBox3.TabIndex = 6;
             groupBox3.TabStop = false;
             groupBox3.Text = "Thông tin khách hàng";
+            // 
+            // dtp_NgaySinh
+            // 
+            dtp_NgaySinh.BorderColor = Color.PaleVioletRed;
+            dtp_NgaySinh.BorderSize = 0;
+            dtp_NgaySinh.Font = new Font("Segoe UI", 10F);
+            dtp_NgaySinh.Format = DateTimePickerFormat.Short;
+            dtp_NgaySinh.Location = new Point(217, 110);
+            dtp_NgaySinh.MinimumSize = new Size(0, 35);
+            dtp_NgaySinh.Name = "dtp_NgaySinh";
+            dtp_NgaySinh.Size = new Size(179, 35);
+            dtp_NgaySinh.SkinColor = Color.SeaGreen;
+            dtp_NgaySinh.TabIndex = 37;
+            dtp_NgaySinh.TextColor = Color.White;
             // 
             // cb_GioiTinh
             // 
@@ -296,16 +311,6 @@
             label4.TabIndex = 24;
             label4.Text = "Họ và tên: ";
             // 
-            // dtp_NgaySinh
-            // 
-            dtp_NgaySinh.Font = new Font("Segoe UI", 10F);
-            dtp_NgaySinh.Format = DateTimePickerFormat.Short;
-            dtp_NgaySinh.Location = new Point(214, 112);
-            dtp_NgaySinh.Margin = new Padding(4, 5, 4, 5);
-            dtp_NgaySinh.Name = "dtp_NgaySinh";
-            dtp_NgaySinh.Size = new Size(182, 30);
-            dtp_NgaySinh.TabIndex = 23;
-            // 
             // tb_HoVaTen
             // 
             tb_HoVaTen.Font = new Font("Segoe UI", 10F);
@@ -381,9 +386,20 @@
             // 
             dgv_DanhSachKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_DanhSachKhachHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgv_DanhSachKhachHang.DefaultCellStyle = dataGridViewCellStyle1;
             dgv_DanhSachKhachHang.Location = new Point(7, 28);
             dgv_DanhSachKhachHang.Name = "dgv_DanhSachKhachHang";
+            dgv_DanhSachKhachHang.ReadOnly = true;
+            dgv_DanhSachKhachHang.RowHeadersVisible = false;
             dgv_DanhSachKhachHang.RowHeadersWidth = 51;
+            dgv_DanhSachKhachHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_DanhSachKhachHang.Size = new Size(790, 689);
             dgv_DanhSachKhachHang.TabIndex = 0;
             // 
@@ -427,7 +443,6 @@
         private TextBox tb_SoDienThoai;
         private Label label5;
         private Label label4;
-        private DateTimePicker dtp_NgaySinh;
         private TextBox tb_HoVaTen;
         private Label label11;
         private GroupBox groupBox4;
@@ -440,5 +455,6 @@
         private Label label1;
         private Label label12;
         private TextBox tb_HoVaTenTim;
+        private RJControls.RJDatePicker dtp_NgaySinh;
     }
 }

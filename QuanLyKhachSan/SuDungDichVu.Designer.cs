@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
             tb_MaPhong = new TextBox();
             dgv_DanhSachDichVu = new DataGridView();
@@ -62,9 +63,19 @@
             // 
             dgv_DanhSachDichVu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_DanhSachDichVu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgv_DanhSachDichVu.DefaultCellStyle = dataGridViewCellStyle1;
             dgv_DanhSachDichVu.Location = new Point(12, 45);
             dgv_DanhSachDichVu.Name = "dgv_DanhSachDichVu";
+            dgv_DanhSachDichVu.RowHeadersVisible = false;
             dgv_DanhSachDichVu.RowHeadersWidth = 51;
+            dgv_DanhSachDichVu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_DanhSachDichVu.Size = new Size(661, 346);
             dgv_DanhSachDichVu.TabIndex = 2;
             // 

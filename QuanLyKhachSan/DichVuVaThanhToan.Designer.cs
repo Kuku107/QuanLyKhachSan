@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             groupBox2 = new GroupBox();
             dgv_DanhSachPhongDangThue = new DataGridView();
             bt_ThanhToan = new Button();
@@ -59,9 +60,20 @@
             // 
             dgv_DanhSachPhongDangThue.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_DanhSachPhongDangThue.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgv_DanhSachPhongDangThue.DefaultCellStyle = dataGridViewCellStyle1;
             dgv_DanhSachPhongDangThue.Location = new Point(6, 33);
             dgv_DanhSachPhongDangThue.Name = "dgv_DanhSachPhongDangThue";
+            dgv_DanhSachPhongDangThue.ReadOnly = true;
+            dgv_DanhSachPhongDangThue.RowHeadersVisible = false;
             dgv_DanhSachPhongDangThue.RowHeadersWidth = 51;
+            dgv_DanhSachPhongDangThue.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_DanhSachPhongDangThue.Size = new Size(1245, 528);
             dgv_DanhSachPhongDangThue.TabIndex = 0;
             // 
